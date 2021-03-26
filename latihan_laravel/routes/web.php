@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::resource('user','App\Http\Controllers\ManagementUserController');
 //Route::get('user', [ManagementUserController::class, 'index']);
 //Route::get('user','App\Http\Controllers\ManagementUserController@index');
+
+Route::get("/home", function(){
+    return view("home");
+});
