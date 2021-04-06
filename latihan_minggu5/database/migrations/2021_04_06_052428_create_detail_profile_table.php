@@ -14,11 +14,12 @@ class CreateDetailProfileTable extends Migration
     public function up()
     {
         Schema::create('detail_profile', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('address');
-            $table->string('nomor_tlp');
-            $table->date('ttl');
-            $table->string('foto');
+            $table->increments('id');
+            $table->string('name', 100);
+            $table->text('alamat');
+            $table->integer('jenis_kelamin')->unsigned()->default(1);
+            $table->integer('prodi')->unsigned()->default(1);
+            $table->string('no_hp', 15);
             $table->timestamps();
         });
     }
